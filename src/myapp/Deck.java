@@ -23,14 +23,15 @@ public class Deck {
         }
     }
 
+    // Shuffle method that ensures equal probability of each card ending up in any position in the array
     public void shuffle(){
         Random rand = new Random();
 
         for (int i = 0; i < cards.length; i++ ){
-            int randomIndex = rand.nextInt(cards.length);
-            Card temp = cards[i];
-            cards[i] = cards[randomIndex];
-            cards[randomIndex] = temp;
+            int randomIndex = rand.nextInt(cards.length); // Generate a random index from 0 to 51
+            Card temp = cards[i]; // Store the current card in a TEMPORARY variable
+            cards[i] = cards[randomIndex]; // card at random Index goes to the position of where the current card is
+            cards[randomIndex] = temp; // Put the original card at the position of the aforementioned random Index
         }
 
         currentCard = 0;
@@ -38,8 +39,8 @@ public class Deck {
     }
 
     public Card drawCard(){
-        if (currentCard < cards.length){
-            return cards[currentCard++];
+        if (currentCard < cards.length){ // means when currentCard = 51, there will be no more cards left to draw
+            return cards[currentCard++]; //Return the current card and increment the index. so you would draw cards[0] then cards[1] if u decide to draw again
         } else {
             return null;
         }

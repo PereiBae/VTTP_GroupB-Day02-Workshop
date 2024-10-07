@@ -6,7 +6,7 @@ public class profMain {
         profDeck deck = new profDeck();
         System.out.println("deck.get(5)");
 
-        System.out.println(card);
+        System.out.println();
         System.out.println(deck);
     }
     
